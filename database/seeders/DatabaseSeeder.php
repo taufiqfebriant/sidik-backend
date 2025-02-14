@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Product;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -24,6 +24,15 @@ class DatabaseSeeder extends Seeder
       'email' => 'admin@example.com',
       'password' => Hash::make('12345678'),
       'role_id' => $adminRole->id,
+      'created_at' => now(),
+      'updated_at' => now(),
+    ]);
+
+    Product::create([
+      'name' => 'Dummy Product',
+      'description' => 'This is a dummy product for testing.',
+      'price' => 100.00,
+      'image' => null,
       'created_at' => now(),
       'updated_at' => now(),
     ]);
